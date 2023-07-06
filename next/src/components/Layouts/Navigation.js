@@ -27,7 +27,7 @@ import AdbIcon from '@mui/icons-material/Adb'
 import MenuIcon from '@mui/icons-material/Menu'
 
 const pages = ['Products', 'Pricing', 'Blog']
-const settings = ['Profile', 'Account', 'Dashboard']
+const settings = ['Profile', 'Account']
 
 const Navigation = ({ user }) => {
     const router = useRouter()
@@ -188,6 +188,8 @@ const Navigation = ({ user }) => {
                                 }}
                                 open={Boolean(anchorElUser)}
                                 onClose={handleCloseUserMenu}>
+
+
                                 {settings.map(setting => (
                                     <MenuItem
                                         key={setting}
@@ -197,6 +199,27 @@ const Navigation = ({ user }) => {
                                         </Typography>
                                     </MenuItem>
                                 ))}
+
+                                <MenuItem
+                                    component={Link}
+                                    href="/dashboard"
+                                    key='Dashboard'
+                                    onClick={handleCloseUserMenu}>
+                                    <Typography textAlign="center">
+                                        Dashboard
+                                    </Typography>
+                                </MenuItem>
+
+                                <MenuItem
+                                    component={Link}
+                                    href="/dashboard/user"
+                                    key='Users'
+                                    onClick={handleCloseUserMenu}>
+                                    <Typography textAlign="center">
+                                        Users
+                                    </Typography>
+                                </MenuItem>
+
                                 <MenuItem key="logout" onClick={logout}>
                                     <Typography textAlign="center">
                                         Logout
