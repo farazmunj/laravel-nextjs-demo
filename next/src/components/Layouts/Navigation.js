@@ -26,7 +26,7 @@ import {
 import AdbIcon from '@mui/icons-material/Adb'
 import MenuIcon from '@mui/icons-material/Menu'
 
-const pages = ['Products', 'Pricing', 'Blog']
+const pages = ['Products', 'Pricing']
 const settings = ['Profile', 'Account']
 
 const Navigation = ({ user }) => {
@@ -113,6 +113,17 @@ const Navigation = ({ user }) => {
                                 sx={{
                                     display: { xs: 'block', md: 'none' },
                                 }}>
+
+                                <MenuItem
+                                    component={Link}
+                                    href='/blog'
+                                    key="blog"
+                                    onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">
+                                        Blog
+                                    </Typography>
+                                </MenuItem>
+
                                 {pages.map(page => (
                                     <MenuItem
                                         key={page}
@@ -150,6 +161,18 @@ const Navigation = ({ user }) => {
                                 flexGrow: 1,
                                 display: { xs: 'none', md: 'flex' },
                             }}>
+
+
+                            <MenuItem
+                                component={Link}
+                                href='/blog'
+                                key="blog"
+                                onClick={handleCloseNavMenu}>
+                                <Typography textAlign="center">
+                                    Blog
+                                </Typography>
+                            </MenuItem>
+
                             {pages.map(page => (
                                 <Button
                                     key={page}
