@@ -24,7 +24,7 @@ const ForgotPassword = () => {
 
     return (
         <GuestLayout>
-            <AuthCard text='Reset Password'>
+            <AuthCard text="Reset Password">
                 <Typography sx={{ mt: 3 }}>
                     Forgot your password? No problem. Just let us know your
                     email address and we will email you a password reset link
@@ -34,7 +34,7 @@ const ForgotPassword = () => {
                 {/* Session Status */}
                 <AuthSessionStatus className="mb-4" status={status} />
 
-                <Box component='form' onSubmit={submitForm} sx={{ mt: 3 }}>
+                <Box component="form" onSubmit={submitForm} sx={{ mt: 3 }}>
                     {/* Email Address */}
                     <TextField
                         fullWidth
@@ -46,18 +46,20 @@ const ForgotPassword = () => {
                         onChange={event => setEmail(event.target.value)}
                         required
                         autoFocus
-                        margin='normal'
-                        autoCapitalize='email'
+                        margin="normal"
+                        autoCapitalize="email"
                         helperText={errors.email ? errors.email : ''}
-                        placeholder='Email Address'
-                        label='Email Address'
+                        placeholder="Email Address"
+                        label="Email Address"
                     />
 
-                    <Button type='submit'
+                    <Button
+                        type="submit"
                         fullWidth
                         variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
-                    >Email Password Reset Link</Button>
+                        sx={{ mt: 3, mb: 2 }}>
+                        Email Password Reset Link
+                    </Button>
                 </Box>
             </AuthCard>
         </GuestLayout>

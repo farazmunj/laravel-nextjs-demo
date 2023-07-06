@@ -8,7 +8,15 @@ import DataTable from '@/components/DataTable'
 import useSWR from 'swr'
 import axios from '@/lib/axios'
 import { useRouter } from 'next/router'
-import { Box, Button, Container, Paper, Stack, TablePagination, Typography } from '@mui/material'
+import {
+    Box,
+    Button,
+    Container,
+    Paper,
+    Stack,
+    TablePagination,
+    Typography,
+} from '@mui/material'
 
 const GetUserListData = URL =>
     axios
@@ -21,7 +29,7 @@ const GetUserListData = URL =>
 export default function UserList() {
     const router = useRouter()
 
-    const [rowsPerPage, setRowsPerPage] = useState(5);
+    const [rowsPerPage, setRowsPerPage] = useState(5)
 
     //#page1 routing on client side.
     const { asPath } = useRouter()
@@ -51,12 +59,12 @@ export default function UserList() {
     const handleChangePage = (event, newPage) => {
         // setPage(newPage);
         setPageIndex(newPage + 1)
-    };
+    }
 
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 10));
-        setPageIndex(0);
-    };
+    const handleChangeRowsPerPage = event => {
+        setRowsPerPage(parseInt(event.target.value, 10))
+        setPageIndex(0)
+    }
     return (
         <AppLayout
             header={
@@ -67,21 +75,24 @@ export default function UserList() {
                             bgcolor: 'background.paper',
                             pt: 8,
                             pb: 6,
-                        }}
-                    >
+                        }}>
                         <Container maxWidth="sm">
                             <Typography
                                 component="h1"
                                 variant="h2"
                                 align="center"
                                 color="text.primary"
-                                gutterBottom
-                            >
+                                gutterBottom>
                                 Users list
                             </Typography>
-                            <Typography variant="h5" align="center" color="text.secondary" paragraph>
-                                Something short and leading about the collection below—its contents,
-                                the creator, etc. Make it short and sweet, but not too short so folks
+                            <Typography
+                                variant="h5"
+                                align="center"
+                                color="text.secondary"
+                                paragraph>
+                                Something short and leading about the collection
+                                below—its contents, the creator, etc. Make it
+                                short and sweet, but not too short so folks
                                 don&apos;t simply skip over it entirely.
                             </Typography>
                         </Container>
@@ -98,27 +109,24 @@ export default function UserList() {
             ) : (
                 <>
                     <Box sx={{ width: '100%' }}>
-                        <Paper sx={
-                            { margin: 2 }
-                        } >
+                        <Paper sx={{ margin: 2 }}>
                             <DataTable
                                 tableConfig={tableConfig}
                                 data={users.data}
                             />
                             <TablePagination
                                 rowsPerPageOptions={[5, 10, 25]}
-                                component='div'
+                                component="div"
                                 count={users.meta.total}
                                 rowsPerPage={users.meta.per_page}
                                 page={pageIndex - 1}
                                 onPageChange={handleChangePage}
                                 onRowsPerPageChange={handleChangeRowsPerPage}
-
-                            ></TablePagination>
+                            />
                         </Paper>
                     </Box>
                 </>
             )}
-        </AppLayout >
+        </AppLayout>
     )
 }

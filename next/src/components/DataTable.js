@@ -2,14 +2,22 @@
 
 import Link from 'next/link'
 import Date from './Date'
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
+import {
+    Paper,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+} from '@mui/material'
 
 export default function DataTable({ tableConfig, data }) {
     console.log(data)
     return (
         <>
             <TableContainer>
-                <Table sx={{ minWidth: 650 }} aria-label='Table data'>
+                <Table sx={{ minWidth: 650 }} aria-label="Table data">
                     <TableHead className="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
                         <TableRow key={`data-table-header-key`}>
                             {tableConfig.map(config => {
@@ -55,10 +63,16 @@ export default function DataTable({ tableConfig, data }) {
                                                                     config.edit +
                                                                     '' +
                                                                     item[
-                                                                    config.name
+                                                                        config
+                                                                            .name
                                                                     ]
                                                                 }>
-                                                                {item[config.name]}
+                                                                {
+                                                                    item[
+                                                                        config
+                                                                            .name
+                                                                    ]
+                                                                }
                                                             </Link>{' '}
                                                         </>
                                                     ) : (

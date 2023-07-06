@@ -188,8 +188,6 @@ const Navigation = ({ user }) => {
                                 }}
                                 open={Boolean(anchorElUser)}
                                 onClose={handleCloseUserMenu}>
-
-
                                 {settings.map(setting => (
                                     <MenuItem
                                         key={setting}
@@ -203,7 +201,7 @@ const Navigation = ({ user }) => {
                                 <MenuItem
                                     component={Link}
                                     href="/dashboard"
-                                    key='Dashboard'
+                                    key="Dashboard"
                                     onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">
                                         Dashboard
@@ -213,7 +211,7 @@ const Navigation = ({ user }) => {
                                 <MenuItem
                                     component={Link}
                                     href="/dashboard/user"
-                                    key='Users'
+                                    key="Users"
                                     onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">
                                         Users
@@ -230,7 +228,6 @@ const Navigation = ({ user }) => {
                     </Toolbar>
                 </Container>
             </AppBar>
-
         </>
     )
 }

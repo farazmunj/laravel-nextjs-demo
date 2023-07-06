@@ -3,7 +3,14 @@ import GuestLayout from '@/components/Layouts/GuestLayout'
 import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
 import { useState } from 'react'
-import { Box, Button, Checkbox, FormControlLabel, Grid, TextField } from '@mui/material'
+import {
+    Box,
+    Button,
+    Checkbox,
+    FormControlLabel,
+    Grid,
+    TextField,
+} from '@mui/material'
 
 const Register = () => {
     const { register } = useAuth({
@@ -31,8 +38,12 @@ const Register = () => {
 
     return (
         <GuestLayout>
-            <AuthCard text='Sign up' >
-                <Box component="form" noValidate onSubmit={submitForm} sx={{ mt: 3 }}>
+            <AuthCard text="Sign up">
+                <Box
+                    component="form"
+                    noValidate
+                    onSubmit={submitForm}
+                    sx={{ mt: 3 }}>
                     <TextField
                         margin="normal"
                         autoComplete="name"
@@ -77,19 +88,29 @@ const Register = () => {
                         type="password"
                         id="passwordConfirmation"
                         autoComplete="new-password"
-                        onChange={event => setPasswordConfirmation(event.target.value)}
-                        helperText={errors.password_confirmation ? errors.password_confirmation : ''}
+                        onChange={event =>
+                            setPasswordConfirmation(event.target.value)
+                        }
+                        helperText={
+                            errors.password_confirmation
+                                ? errors.password_confirmation
+                                : ''
+                        }
                     />
                     <FormControlLabel
-                        control={<Checkbox value="allowExtraEmails" color="primary" />}
+                        control={
+                            <Checkbox
+                                value="allowExtraEmails"
+                                color="primary"
+                            />
+                        }
                         label="I want to receive inspiration, marketing promotions and updates via email."
                     />
                     <Button
                         type="submit"
                         fullWidth
                         variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
-                    >
+                        sx={{ mt: 3, mb: 2 }}>
                         Sign Up
                     </Button>
                     <Grid container justifyContent="flex-end">
