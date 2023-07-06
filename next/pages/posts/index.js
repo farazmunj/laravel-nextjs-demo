@@ -1,5 +1,5 @@
 import Date from '@/components/Date'
-import { getSortedPostsData } from '../../lib/posts'
+import { getSortedPostsData } from '../../src/lib/posts'
 import AppLayout from '@/components/Layouts/AppLayout'
 import utilStyles from '@/styles/utils.module.css'
 import Head from 'next/head'
